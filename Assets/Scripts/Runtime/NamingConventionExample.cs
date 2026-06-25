@@ -41,6 +41,7 @@ namespace Runtime
 
     public class UnitTests
     {
+        //ensure that function and variable names are clear and descriptive of their purpose
         public int AddTwoNumbers(int num1, int num2)
         {
             return num1 + num2;
