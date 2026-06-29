@@ -3,6 +3,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using System;
 using UnityEditor;
+using UnityEngine.UI;
 
 namespace Runtime.CodingConcepts
 {
@@ -29,12 +30,40 @@ namespace Runtime.CodingConcepts
 
     public class AsyncCode
     {
-        
+
     }
 
     public class LambdaExpressions
     {
-        
+        void LambdaExample1()
+        {
+            Func<float, float> square = x => x * x;
+            float squaredNumber = square(3);
+            
+            //vs
+
+            squaredNumber = SquareNumber(3);
+        }
+
+        float SquareNumber(float number)
+        {
+            return number * number;
+        }
+
+        public Button exampleButton;
+        void LambdaExample2()
+        {
+            exampleButton.onClick.AddListener(() => Debug.Log("Button Pressed"));
+            
+            //vs
+
+            exampleButton.onClick.AddListener(OnButtonPressed);
+        }
+
+        void OnButtonPressed()
+        {
+            Debug.Log("Button Pressed");
+        }
     }
 
     public class UnitTesting
