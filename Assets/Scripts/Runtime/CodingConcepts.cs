@@ -2,6 +2,7 @@ using NUnit.Framework;
 using UnityEngine;
 using System.Collections.Generic;
 using System;
+using UnityEditor;
 
 namespace Runtime.CodingConcepts
 {
@@ -26,6 +27,16 @@ namespace Runtime.CodingConcepts
         Stack<int> stack;
     }
 
+    public class AsyncCode
+    {
+        
+    }
+
+    public class LambdaExpressions
+    {
+        
+    }
+
     public class UnitTesting
     {
         //this is a simple example of unit testing within C#
@@ -39,7 +50,7 @@ namespace Runtime.CodingConcepts
 
             if (minutes < 0 || minutes > 61)
                 throw new ArgumentOutOfRangeException("Minutes can only be a value from 0 to 60");
-            
+
             int formattedHour = hour % 12;
 
             string currentTime = $"{formattedHour:00}:{minutes:00}";
@@ -70,10 +81,10 @@ namespace Runtime.CodingConcepts
         }
     }
 
-    public class EditorScripting
+    public class ErrorHandling
     {
-        //editor scripting is a way of building custom inspectors for your unity code
-        //for further reading, check this article
-        //https://learn.unity.com/tutorial/editor-scripting
+        //try catch
+        //throw Exceptions
     }
+
 }
