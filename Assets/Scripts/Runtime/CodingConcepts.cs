@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System;
 using UnityEditor;
 using UnityEngine.UI;
+using UnityEditor.TerrainTools;
+using Unity.VisualScripting;
 
 namespace Runtime.CodingConcepts
 {
@@ -116,4 +118,23 @@ namespace Runtime.CodingConcepts
         //throw Exceptions
     }
 
+    public class ScriptExample : MonoBehaviour
+    {
+        public enum State   { State0 = 0, State1 = 1}
+        public State state;
+
+        public int int1;
+        public int int2;
+    }
+
+    [CustomEditor(typeof(ScriptExample))]
+    public class EditorScript : Editor
+    {
+        public override void OnInspectorGUI()
+        {
+            ScriptExample scriptExample = (ScriptExample)target;
+
+            
+        }
+    }
 }
