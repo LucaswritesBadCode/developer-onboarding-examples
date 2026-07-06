@@ -1,7 +1,3 @@
-using System;
-using JetBrains.Annotations;
-using NUnit.Framework;
-using NUnit.Framework.Constraints;
 using UnityEngine;
 
 public class SingleLevelAbstraction : MonoBehaviour
