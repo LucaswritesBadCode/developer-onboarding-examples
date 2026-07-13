@@ -8,6 +8,7 @@ using UnityEngine;
 /* This first example uses interfaces to decouple the dependency between a switch and the objects it activates.
 Basically, instead of the switch calling the door/light/radio classes directly,
 we can make it call an interface instead and have them all inherit from the interface.
+
 This allows us to keep our code more flexible and scalable since now the switch doesn't need to know what it's activating,
 it just needs to call the interface, so we can add whatever new stuff we want as long as it uses the interface. */
 
@@ -107,6 +108,7 @@ namespace Runtime.DesignPrinciples.Decoupled
 /* This second example shows how events can be used to reverse the dependency between a caller and called script.
 Normally, script A will call Script B to trigger a function BUT that means that Script A is dependent on Script B to function properly.
 If Script B fails, Script A also fails. This means that they are tightly coupled.
+
 However, by using events, Script B can instead, subscribe to Script A event to trigger its function.
 So, Script A doesn't need to know anything about what Script B does, it just needs to invoke its event and Script B does all the work.
 This once again means that Script A is not dependent on Script B; if Script B fails, it doesn't affect it. */

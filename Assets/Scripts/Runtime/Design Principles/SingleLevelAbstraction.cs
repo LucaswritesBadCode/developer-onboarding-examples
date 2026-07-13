@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class SingleLevelAbstraction : MonoBehaviour
 {
-    /*single level of abstraction principle (SLAP or SLA) focuses on the readability of code
+    /* single level of abstraction principle (SLAP or SLA) focuses on the readability of code
     by emphasizing that functions should only comprise of statmenet on the same level of "ABSTRACTION"
     
     What is abstraction?
-    When you perform a function, it tends to be made of different parts, or sub-actions.*/
+    When you perform a function, it tends to be made of different parts, or sub-actions. */
 
     public Rigidbody2D rb;
     public Animator playerAnimator;
@@ -27,12 +27,15 @@ public class SingleLevelAbstraction : MonoBehaviour
         }
     }
 
-    /*you can kind of imagine an abstraction level as a sort of hierarchy, imagine if you had an attack script,
-    the chain of abstractions could be Attack(), which would then feed into EnableHitbox() then CheckIfEnemyHit() then DamageEnemy().
-    those are your levels of abstraction.
+    /* you can kind of imagine an abstraction level as a sort of hierarchy, 
+    actions are made of sub-actions and each sub-action is one abstaction level down on the hierarchy.
+
+    Attack() - Level 1 Abstraction
+        L CheckHitBox() - Level 2 Abstraction
+            L EnableHitBox(), CheckCollisionWithEnemy() - Level 3 Abstraction
     
     as it is right now, this code looks somewhat dense and complicated which can make it hard to read and understand
-    it forces us to closely analyse the entire implementation if we want to figure out its function*/
+    it forces us to closely analyse the entire implementation if we want to figure out its function */
 
     public void UpdateRefactored()
     {

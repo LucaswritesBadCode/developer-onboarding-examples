@@ -1,13 +1,12 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.Timeline;
 
 public class RuleOfThrees : MonoBehaviour
 {
-    //there are a few concepts that the rule of threes actually apply to, here are some examples.
+    // there are a few concepts that the rule of threes actually apply to, here are some examples.
 
     /* The common meaning of rule of threes in progrmming usually refers to the idea of
-    "Three strikes and you refactor"; that is to say, only refactor duplications once they appear for a third time.*/
+    "Three strikes and you refactor"; that is to say, only refactor duplications once they appear for a third time. */
 
     public Transform playerTransform;
 
@@ -19,7 +18,7 @@ public class RuleOfThrees : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.D))
             playerTransform.position += Vector3.right * 0.3f;
 
-        //note: you should probably still refactor this down the line, this rule mainly relates to immediately refactoring while you're still coding
+        // note: you should probably still refactor this down the line, this rule mainly relates to immediately refactoring while you're still coding
     }
 
     public void YouShouldRefactor()
@@ -51,7 +50,7 @@ public class RuleOfThrees : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.S))
             MoveCharacter(Vector3.down);
 
-        //note: there are definitely further improvements that could be made to this code but this is just to illustrate a point
+        // note: there are definitely further improvements that could be made to this code but this is just to illustrate a point
     }
 
     public void MoveCharacter(Vector3 movementVector)
@@ -59,9 +58,9 @@ public class RuleOfThrees : MonoBehaviour
         playerTransform.position += movementVector * 0.3f;
     }
 
-    /*another meaning for the rule of threes can be applied to nesting,
+    /* another meaning for the rule of threes can be applied to nesting,
     basically, nesting if statements, for loops and foreach loops is fine
-    but don't do it more than thrice*/
+    but don't do it more than thrice */
     public bool boolean1;
     public bool boolean2;
     public bool boolean3;
@@ -69,12 +68,12 @@ public class RuleOfThrees : MonoBehaviour
 
     public void BadPractice(bool argument)
     {
-        if (argument == boolean1) //1st layer
-            if (argument == boolean2) //2nd layer
-                if (argument == boolean3) //3rd layer
-                    if (argument == boolean4) //please refactor.
+        if (argument == boolean1) // 1st layer
+            if (argument == boolean2) // 2nd layer
+                if (argument == boolean3) // 3rd layer
+                    if (argument == boolean4) // please refactor.
                     {
-                        //insert stuff here.
+                        // insert stuff here.
                     }
     }
 
@@ -86,34 +85,34 @@ public class RuleOfThrees : MonoBehaviour
 
         if (argument != boolean4)
         {
-            //insert stuff here.
+            // insert stuff here.
         }
 
-        //ALTERNATIVELY
+        // ALTERNATIVELY
 
         if (argument != boolean1 || argument != boolean2 || argument != boolean3)
             return;
         if (argument != boolean4)
         {
-            //insert stuff here.
+            // insert stuff here.
         }
     }
 
     public void NotAsGoodPractice(bool argument)
     {
-        //you might be wondering if using && would work as well.
+        // you might be wondering if using && would work as well.
 
         if (argument == boolean1 && argument == boolean2 && argument == boolean3 && argument == boolean4)
         {
-            //insert stuff here.
+            // insert stuff here.
         }
 
-        /*we'd recommend against doing it like this because it requires a lot more mental energy
-        to keep track of all the variables and is a lot less readable*/
+        /* we'd recommend against doing it like this because it requires a lot more mental energy
+        to keep track of all the variables and is a lot less readable */
     }
 
-    /*if you absolutely need that many nested statements, however, 
-    it would be better to extract them into their own functions*/
+    /* if you absolutely need that many nested statements, however, 
+    it would be better to extract them into their own functions */
 
     public void CheckBoolean1(bool argument)
     {
@@ -123,7 +122,7 @@ public class RuleOfThrees : MonoBehaviour
         }
         else
         {
-            //insert code here.
+            // insert code here.
         }
     }
 
@@ -131,25 +130,25 @@ public class RuleOfThrees : MonoBehaviour
     {
         if (argument == boolean1)
         {
-            //CheckBoolean3(), etc...
+            // CheckBoolean3(), etc...
         }
         else
         {
-            //insert code here.
+            // insert code here.
         }
     }
 
     /* The final rule of 3 is similar to the nested if statements.
     Only perform at most 3 levels of abstraction. */
 
-    public abstract class Enemy //1st level of abstraction
+    public abstract class Enemy // 1st level of abstraction
     {
         protected int healthPoints = 100;   
         protected float speed = 10;
         public abstract void Attack();    
     }
 
-    public abstract class GroundEnemy : Enemy //2nd level of abstraction
+    public abstract class GroundEnemy : Enemy // 2nd level of abstraction
     {
         public GroundEnemy()
         {
@@ -166,14 +165,14 @@ public class RuleOfThrees : MonoBehaviour
 
         public override void Attack()
         {
-            //insert attack here.
+            // insert attack here.
         }
     }
 
-    //stop here. you shouldn't implement any more abstractions beyond this.
+    // stop here. you shouldn't implement any more abstractions beyond this.
 
     /* do note that this concerns chaining abstract classes, 
-    a script inheriting from more than 3 interfaces is allowed*/
+    a script inheriting from more than 3 interfaces is allowed */
     public class Interface : IPointerDownHandler, IPointerUpHandler, IPointerEnterHandler, IPointerExitHandler
     {
         //this is permitted.

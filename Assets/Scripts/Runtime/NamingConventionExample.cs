@@ -7,23 +7,23 @@ namespace Runtime
 {
     public class NamingConventionExample /* class in PascalCase */ : IExampleInterface
     {
-        //VARIABLES//
-        private string _privateField; //private fields in _camelCaseWithUnderscore
-        [SerializeField] string _serializedPrivateField; //serializedPrivateFields in _camelCaseWithUnderscore
-        public string publicField; //public field in camelCase
-        const string Constant = "Constant"; //constants in PascalCase
+        // VARIABLES //
+        private string _privateField; // private fields in _camelCaseWithUnderscore
+        [SerializeField] string _serializedPrivateField; // serializedPrivateFields in _camelCaseWithUnderscore
+        public string publicField; // public field in camelCase
+        const string Constant = "Constant"; // constants in PascalCase
 
         //COLLECTIONS//
-        string[] stringArray; string[] strings; //arrays end with "array" or are plural
-        List<string> stringList; //lists end with "List"
+        string[] stringArray; string[] strings; // arrays end with "array" or are plural
+        List<string> stringList; // lists end with "List"
         Dictionary<string, string> stringDictionary; Dictionary<string, string> stringDict;
 
         //ENUMS//
-        public enum ExampleEnum //enums in PascalCase
+        public enum ExampleEnum // enums in PascalCase
         {
-            //enum elements in PascalCase
-            None = 0, //Always reserve the 0th enum for "None"
-            FirstEnum = 1, //Always assign an int to each enum element
+            // enum elements in PascalCase
+            None = 0, // Always reserve the 0th enum for "None"
+            FirstEnum = 1, // Always assign an int to each enum element
             SecondEnum = 2
         }
 
@@ -41,13 +41,13 @@ namespace Runtime
 
     public class UnitTests
     {
-        //ensure that function and variable names are clear and descriptive of their purpose
+        // ensure that function and variable names are clear and descriptive of their purpose
         public int AddTwoNumbers(int num1, int num2)
         {
             return num1 + num2;
         }
 
-        [Test] //test name format When_Condition_Expect_ExpectedOutcome
+        [Test] // test name format When_Condition_Expect_ExpectedOutcome
         public void When_TwoAndFourAdded_Expect_Six()
         {
             int cummulativeNum = AddTwoNumbers(2, 4);
