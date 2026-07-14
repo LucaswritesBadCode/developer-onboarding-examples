@@ -9,7 +9,7 @@ namespace Runtime
     {
         // VARIABLES //
         private string _privateField; // private fields in _camelCaseWithUnderscore
-        [SerializeField] string _serializedPrivateField; // serializedPrivateFields in _camelCaseWithUnderscore
+        [SerializeField] string serializedPrivateField; // serializedPrivateFields in camelCase
         public string publicField; // public field in camelCase
         const string Constant = "Constant"; // constants in PascalCase
 
